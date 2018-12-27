@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/ramdannur/laravel-sso-passport/master/sso.png"></p>
+
 # Single Sign On (SSO) 
 
 Single sign-on (SSO) is a property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to a connected system or systems without using different usernames or passwords, or in some configurations seamlessly sign on at each system. 
