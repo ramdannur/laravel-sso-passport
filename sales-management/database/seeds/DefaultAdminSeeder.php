@@ -18,9 +18,9 @@ class DefaultAdminSeeder extends Seeder
             DB::beginTransaction();
 
             $modelUser = new User;
-            $modelUser->name = 'Developer CyberLabs';
-            $modelUser->email = 'cyberlabs.dev@gmail.com';
-            $modelUser->password = bcrypt('developers');
+            $modelUser->name = 'Ramdannur';
+            $modelUser->email = 'ramdannur@gmail.com';
+            $modelUser->password = bcrypt('secret');
             $modelUser->is_admin = 1;
             $modelUser->save();
             
