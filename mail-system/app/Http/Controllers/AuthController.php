@@ -37,6 +37,8 @@ class AuthController extends Controller
      */
     public function setSession(Request $request, $id)
     {
+        header("Access-Control-Allow-Origin: *");
+
         $accessToken = $id;
         $data = array();
         $isHasRemember = "on";
@@ -50,7 +52,26 @@ class AuthController extends Controller
 
         Auth::loginUsingId($user_id, $isHasRemember);
 
+        setcookie('passport_token', "123");
         Cookie::queue('passport_token', $accessToken, 2628000);
+        Session::put('passport_token', $accessToken);
+        // $accessToken = Session::get('passport_token');
+        // dd(Auth::check());
+        echo '
+        Success
+        <script>
+        function setCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+        setCookie("ppkcookie","testcookie",2628000);
+        </script>
+        ';
     }
 
     public function logout(Request $request)
